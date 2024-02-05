@@ -41,13 +41,15 @@
         font-size: 12px;
         display: flex;
         text-align: justify;
-        margin-left: 30px;
+        margin-left: auto;
+        margin-left: auto;
     }
     .blog-comments{
         font-size: 12px;
         display: flex;
         text-align: left;
-        margin-left: 30px;
+        margin-left: auto;
+        margin-left: auto;
     }
     #blog{
         display: flex;
