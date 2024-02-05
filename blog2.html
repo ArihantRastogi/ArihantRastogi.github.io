@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="sections.css">
+    <link rel="stylesheet" href="blog.css">
+    <title>My Webpage</title>
+</head>
+
+<body >
+    <ul class="topnav">
+        <li><a href="blog1.html">Blog 1</a></li>
+        <li><a class="active" href="#blog">Blog 2</a></li>
+        <li><a href="index.html">Back To Home</a></li>
+        <li class="right">
+            <label class="switch">
+            <input type="checkbox" id="darkModeToggle1">
+            <span class="slider round"></span>
+          </label>
+        </li>
+    </ul>
+    <div id="blog" class="section blog">
+        <div class="blog-content">
+            <h1 class="blog-heading">Batch Trip!</h1>
+            <div class="blog-text">
+                <p>As IIIT Hyderabad students, our recent batch trip was an unforgettable adventure filled with history, culture, and camaraderie. Our first stop was the majestic Golconda Fort, where we embarked on a journey through time, scaling its ancient walls and exploring its hidden chambers. The panoramic view from the top was breathtaking, offering a glimpse into Hyderabad's rich past and vibrant present.
+
+                <br>Next, we ventured to the serene Qureshi Tombs, where the echoes of history whispered tales of bygone eras. Amidst the tranquil surroundings, we immersed ourselves in the beauty and grandeur of these architectural marvels, paying homage to the legacy of those who came before us.
+                    
+                <br>Finally, our day culminated in a joyous dance boat excursion on Hussain Sagar, where laughter and music filled the air as we sailed into the sunset. Against the backdrop of shimmering waters and city lights, we forged memories that will last a lifetime, celebrating friendship and unity amidst the splendor of Hyderabad's landscape.</p>
+            </div>
+            <div class="interactions">
+                <div class="like-button">
+                    <input type="checkbox" id="likeToggle" class="like-toggle">
+                    <label for="likeToggle" class="like-slider"></label>
+                </div>
+            </div>
+            <div class="blog-text">
+                <h2>Comments</h2>
+            </div>
+            <div class="blog-comments">
+                <ul>
+                    <li>Alex -> Scaling Golconda Fort was quite a workout, but the view made it worth the effort!</li>
+                    <li>Sarah -> The tranquility at Qureshi Tombs was a welcome break from the hustle of daily life.</li>
+                    <li>Chris -> Dancing on the boat at Hussain Sagar was the highlight of the trip, creating memories to cherish forever.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="profile-photo">
+            <img src="golconda.jpeg" alt="Your Profile Photo">
+        </div>
+    </div>
+    <button onclick="topFunction()" id="topBtn" title="Go to top">^</button>
+
+    <script>
+        const darkMode1 = localStorage.getItem('darkMode1');
+        const darkModeToggle1 = document.getElementById('darkModeToggle1');
+        const likeToggle = document.getElementById('likeToggle');
+        const body = document.body;
+        if (darkMode1 === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeToggle1').checked = true;
+        }
+        document.getElementById('darkModeToggle1').addEventListener('change', () => {
+            if (document.getElementById('darkModeToggle1').checked) {
+                localStorage.setItem('darkMode1', 'enabled');
+                document.body.classList.add('dark-mode');
+            } else {
+                localStorage.setItem('darkMode1', null);
+                document.body.classList.remove('dark-mode');
+            }
+        });
+        let mybutton = document.getElementById("topBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll('ul.topnav li a');
+            navLinks.forEach(function(navLink) {
+                navLink.addEventListener('click', function(event) {
+                    navLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+        });
+        const isLiked = localStorage.getItem('likeToggle') === 'true';
+        likeToggle.checked = isLiked;
+
+        likeToggle.addEventListener('change', () => {
+            if (likeToggle.checked) {
+                localStorage.setItem('likeToggle', 'true');
+                increaseLikeCounter();
+            } else {
+                localStorage.setItem('likeToggle', 'false');
+                decreaseLikeCounter();
+            }
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,94 @@
+.dark-mode .topnav {
+    background-color: #222;
+}
+
+.dark-mode .topnav li a {
+    color: #fff;
+}
+
+.dark-mode .topnav li a:hover:not(.active) {
+    background-color: #555;
+}
+
+.dark-mode .topnav li a.active {
+    background-color: #999;
+}
+
+.dark-mode{
+    background-image: linear-gradient(to bottom, #222, #000000);
+    background-size: cover;
+    height: 100%;
+}
+
+@media screen and (max-width: 720px) {
+    .dark-mode{
+        background-image: linear-gradient(to bottom, #222, #000000);
+        background-size: cover;
+        height: fit-content;
+    }
+}
+
+.dark-mode .content ul li{
+    color: #fff;
+}
+
+.dark-mode .profile-text{
+    color: antiquewhite;
+}
+
+.dark-mode span{
+    color: rgb(255, 191, 88);
+}
+
+.dark-mode #home{
+    background-image: linear-gradient(to bottom, #555454, #000000);
+    background-size: cover;
+}
+
+.dark-mode #about-me{
+    background-image: linear-gradient(to bottom, #000000, #555454);
+    background-size: cover;
+}
+
+
+.dark-mode .profile-photo-2 img {
+    border-image-source: linear-gradient(to top, #393939, #000000);
+}
+
+.dark-mode #educational-background{
+    background-image: linear-gradient(to bottom, #555454, #000000);
+    background-size: cover;
+}
+
+.dark-mode #skills{
+    background-image: linear-gradient(to bottom, #000000, #555454);
+    background-size: cover;
+}
+
+.dark-mode #achievements{
+    background-image: linear-gradient(to bottom, #555454, #000000);
+    background-size: cover;
+}
+
+.dark-mode .heading{
+    color: rgb(255, 191, 88);
+}
+
+.dark-mode #blog{
+    background-image: linear-gradient(to bottom, #555454, #000000);
+    background-size: cover;
+    min-height: 97vh;
+    height: fit-content;
+}
+
+.dark-mode .blog-text{
+    color: white;
+}
+
+.dark-mode .blog-comments{
+    color: white;
+}
+
+.dark-mode .blog-heading{
+    color: rgb(255, 191, 88);
+}

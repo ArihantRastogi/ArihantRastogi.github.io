@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="sections.css">
+    <title>My Webpage</title>
+</head>
+
+<body >
+    <ul class="topnav">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#educational-background">Educational Background</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="blog1.html">Blog</a></li>
+        <li class="right">
+            <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+          </label>
+        </li>
+    </ul>
+    <div id="home" class="section home">
+        <div class="profile">
+            <div class="profile-text">
+                <h1>Hello, I'm <span class="auto-type"></span></h1>
+                <p>
+                    Welcome to my personal website.<br>
+                    Here are my socials and resume.
+                </p>
+                <div class="image-container">
+                    <div class="grow">
+                        <a href="https://github.com/ArihantRastogi"><img src="github-light.png" alt="Image 1" id="image1"></a>
+                    </div>
+                    <div class="grow">
+                        <a href="mailto:arihant.rastogi@research.iiit.ac.in"><img src="outlook-light.png" alt="Image 2" id="image2" href=""></a>
+                    </div>
+                    <div class="grow">
+                        <a href="https://www.instagram.com/arihantrastogi/"><img src="insta-light.png" alt="Image 3" id="image3"></a>
+                    </div>
+                    <div class="grow">
+                        <a href="https://www.linkedin.com/in/arihant-rastogi-7605942aa/"><img src="linkedin-light.png" alt="Image 4" id="image4"></a>
+                    </div>
+                    <div class="grow">
+                        <a href="CV.pdf"><img src="resume-light.jpg" alt="Image 5" id="image5"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-photo">
+                <img src="profile-photo.jpeg" alt="Your Profile Photo">
+            </div>
+        </div>
+    </div>
+
+    <div id="about-me" class="section about-me">
+        <div class="profile">
+            <div class="profile-photo-2">
+                <img src="photo-3.jpeg" alt="Your Profile Photo">
+            </div>
+            <div class="profile-text">
+                <p style="font-size: 60px; margin-bottom: 20px; color: chocolate;"><b>about me</b></p>
+                <p style="font-family: sans-serif; font-size: 20px;">
+                    I am a first year student at IIIT Hyderabad.<br>
+                    My interests include coding, gaming, basketball <br>
+                    sightseeing, and painting.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="educational-background" class="section educational-background">
+        <div class="container">
+            <p class="heading"><b>educational<br>background</b></p>
+            <div class="content">
+                <ul>
+                    <li>10th CBSE pass from Shaheed Rajpal DAV Public School</li>
+                    <li>12th CBSE pass from DAV Public School Pushpanjali</li>
+                    <li>First Year Student at IIIT Hyderabad<br>
+                        Branch : CSD (Btech in CSE + MS in Computer Science)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="skills" class="section skills">
+        <div class="container">
+            <div class="content">
+                <ul>
+                    <li>Coding Languages</li>
+                    <ul>
+                        <li>C/C++</li>
+                        <li>HTML/CSS/JavaScript</li>
+                        <li>Python</li>
+                    </ul>
+                    <li>German (A1 level)</li>
+                </ul>
+            </div>
+            <p class="heading"><b>Skills</b></p>
+        </div>
+    </div>
+
+    <div id="achievements" class="section achievements">
+        <div class="container">
+            <p class="heading"><b>achievements</b></p>
+            <div class="content"2>
+                <ul>
+                    <li>10th CBSE - 96.8%</li>
+                    <li>12th CBSE - 92.4%</li>
+                    <li>JEE Mains Rank - 3479</li>
+                    <li>JEE Advanced Rank - 4163</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="topBtn" title="Go to top">^</button>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+    const imageElement1 = document.getElementById('image1');
+    const imageElement2 = document.getElementById('image2');
+    const imageElement3 = document.getElementById('image3');
+    const imageElement4 = document.getElementById('image4');
+    const imageElement5 = document.getElementById('image5');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    let isImage1 = true;
+    function toggleImages() {
+        if (isImage1) {
+            imageElement1.src = 'github-dark.png';
+            imageElement2.src = 'outlook-dark.jpeg';
+            imageElement3.src = 'insta-dark.png';
+            imageElement4.src = 'linkedin-dark.png';
+            imageElement5.src = 'resume-dark.jpg';
+            isImage1 = false;
+        } else {
+            imageElement1.src = 'github-light.png';
+            imageElement2.src = 'outlook-light.png';
+            imageElement3.src = 'insta-light.png';
+            imageElement4.src = 'linkedin-light.png';
+            imageElement5.src = 'resume-light.jpg';
+            isImage1 = true;
+        }
+    }
+
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
+    const imagesToggled = localStorage.getItem('imagesToggled') === 'true';
+
+    if (darkModeEnabled) {
+        body.classList.add('dark-mode');
+        darkModeToggle.checked = true;
+    }
+
+    if (imagesToggled) {
+        toggleImages();
+    }
+
+    darkModeToggle.addEventListener('change', () => {
+        if (darkModeToggle.checked) {
+            localStorage.setItem('darkMode', 'enabled');
+            body.classList.add('dark-mode');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            body.classList.remove('dark-mode');
+        }
+    });
+
+    darkModeToggle.addEventListener('change', () => {
+        toggleImages();
+        localStorage.setItem('imagesToggled', darkModeToggle.checked);
+    });
+
+    var typed = new Typed(".auto-type", {
+            strings: ["Arihant.", "Coding.", "Gaming.", "Existing."],
+            typeSpeed : 100,
+            backSpeed : 100,
+            loop : true
+        })
+
+    let mybutton = document.getElementById("topBtn");
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll('ul.topnav li a');
+        navLinks.forEach(function (navLink) {
+            navLink.addEventListener('click', function (event) {
+                navLinks.forEach(function (link) {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    });
+    </script>
+</body>
+</html>
+
+

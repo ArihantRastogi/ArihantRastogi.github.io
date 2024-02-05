@@ -1,0 +1,62 @@
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    height: 90vh;
+}
+
+#home {
+    background-color: #f0f0f0;
+    background-image: linear-gradient(to bottom, #FFFAF0, #EEDD82);
+    background-size: cover;
+}
+
+#about-me {
+    background-color: #ccc;
+    background-image: linear-gradient(to bottom, #EEDD82, #FFFAF0);
+    background-size: cover;
+}
+
+#educational-background{
+    background-image: linear-gradient(to bottom, #FFFAF0, #EEDD82);
+    background-size: cover;
+}
+
+#skills{
+    background-image: linear-gradient(to bottom, #EEDD82, #FFFAF0);
+    background-size: cover;
+}
+
+#achievements{
+    background-image: linear-gradient(to bottom, #FFFAF0, #EEDD82);
+    background-size: cover;
+}
+
+.heading{
+    font-size: 80px; 
+    margin-right: 60px; 
+    margin-left: 70px;
+    color: chocolate;
+}
+
+@media screen and (max-width: 850px){
+    .profile-photo-2 img{
+        margin-right: auto;
+        width: 250px;
+        height: auto;
+    }
+    .container{
+        margin-top: 30px;
+        flex-direction: column;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .heading{
+        margin-left: 0px;
+        margin-right: 0px;
+        font-size: 40px; 
+    }
+}

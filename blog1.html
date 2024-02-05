@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="sections.css">
+    <link rel="stylesheet" href="blog.css">
+    <title>My Webpage</title>
+</head>
+
+<body >
+    <ul class="topnav">
+        <li><a class="active" href="#blog">Blog 1</a></li>
+        <li><a href="blog2.html">Blog 2</a></li>
+        <li><a href="index.html">Back To Home</a></li>
+        <li class="right">
+            <label class="switch">
+            <input type="checkbox" id="darkModeToggle1">
+            <span class="slider round"></span>
+          </label>
+        </li>
+    </ul>
+    <div id="blog" class="section blog">
+        <div class="blog-content">
+            <h1 class="blog-heading">Trying out a <br>new restaurant</h1>
+            <div class="blog-text">
+                <p>At QD's, the atmosphere exudes relaxation and warmth, offering a perfect escape from the bustling city. My recent visit was defined by the tantalizing Lotus Biscoff waffle and ice cream, a highlight showcased on their webpage.
+
+                <br> The chill vibe of QD's made it an ideal spot to unwind. The Lotus Biscoff waffle, crispy yet fluffy, paired harmoniously with the creamy ice cream, delivering a burst of caramelized flavors with every bite.
+                    
+                <br>    Beyond the dessert, QD's culinary offerings impressed with their attention to detail and diverse menu. It provided a haven where friends gathered and individuals found solace in culinary delights.
+                    
+                <br>    As I left QD's, satisfied and rejuvenated, the experience lingered, a testament to its commitment to flavor and ambiance. For those seeking a culinary adventure intertwined with relaxation, QD's is a must-visit destination.</p>
+            </div>
+            <div class="like-button">
+                <input type="checkbox" id="likeToggle1" class="like-toggle1">
+                <label for="likeToggle1" class="like-slider"></label>
+            </div>
+            <div class="blog-text">
+                <h2>Comments</h2>
+            </div>
+            <div class="blog-comments">
+                <ul>
+                    <li>John -> Enjoyed the Lotus Biscoff waffle at QD's, it was quite delightful and had a nice texture.</li>
+                    <li>Stacy -> Nice recommendation!</li>
+                    <li>Dan -> Appreciated the recommendation, it made for a pleasant dining experience.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="profile-photo">
+            <img src="blog-1.jpeg" alt="Your Profile Photo">
+        </div>
+    </div>
+    <button onclick="topFunction()" id="topBtn" title="Go to top">^</button>
+    <script>
+        const darkMode1 = localStorage.getItem('darkMode1');
+        const darkModeToggle1 = document.getElementById('darkModeToggle1');
+        const likeToggle1 = document.getElementById('likeToggle1');
+        const body = document.body;
+        if (darkMode1 === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeToggle1').checked = true;
+        }
+        document.getElementById('darkModeToggle1').addEventListener('change', () => {
+            if (document.getElementById('darkModeToggle1').checked) {
+                localStorage.setItem('darkMode1', 'enabled');
+                document.body.classList.add('dark-mode');
+            } else {
+                localStorage.setItem('darkMode1', null);
+                document.body.classList.remove('dark-mode');
+            }
+        });
+        let mybutton = document.getElementById("topBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll('ul.topnav li a');
+            navLinks.forEach(function(navLink) {
+                navLink.addEventListener('click', function(event) {
+                    navLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+        });
+        const isLiked1 = localStorage.getItem('likeToggle1') === 'true';
+        likeToggle1.checked = isLiked1;
+
+        likeToggle1.addEventListener('change', () => {
+            if (likeToggle1.checked) {
+                localStorage.setItem('likeToggle1', 'true');
+                increaseLikeCounter();
+            } else {
+                localStorage.setItem('likeToggle1', 'false');
+                decreaseLikeCounter();
+            }
+        });
+    </script>
+</body>
+</html>
+
+

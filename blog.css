@@ -1,0 +1,127 @@
+#blog {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f0f0f0;
+    background-image: linear-gradient(to bottom, #FFFAF0, #EEDD82);
+    background-size: cover;
+    min-height: 97vh;
+    height: fit-content;
+}
+
+.blog-heading{
+    font-size: 60px; 
+    margin-right: 60px; 
+    margin-left: 70px;
+    color: chocolate;
+}
+
+.blog-text{
+    font-size: 18px;
+    display: flex;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.blog-comments{
+    font-size: 18px;
+    display: flex;
+    text-align: justify;
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 850px){
+    .blog-heading{
+        margin-top: 30px;
+        font-size: 30px; 
+        margin-right: 0px; 
+        margin-left: 0px;
+    }
+    .blog-text{
+        font-size: 12px;
+        display: flex;
+        text-align: justify;
+        margin-left: 30px;
+    }
+    .blog-comments{
+        font-size: 12px;
+        display: flex;
+        text-align: left;
+        margin-left: 30px;
+    }
+    #blog{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.like-button {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.like-button input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.like-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFFDD0;
+    transition: .4s;
+    border-radius: 17px;
+}
+
+.like-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #CFB284;
+    transition: .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.like-button input:checked + .like-slider {
+    background-color: #FFFDD0;
+}
+
+.like-button input:focus + .like-slider {
+    box-shadow: 0 0 1px #FFFDD0;
+}
+
+.like-button input:checked + .like-slider:before {
+    transform: translateX(26px);
+    content: "\2665";
+    color: red;
+    font-size: 16px;
+}
+
+.like-slider.round {
+    border-radius: 34px;
+}
+
+.like-slider.round:before {
+    border-radius: 50%;
+}
+
+.like-counter {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #333;
+}
